@@ -1,0 +1,80 @@
+/* ============================================================
+   DGEST — sobreposição institucional ao tema padrão do Bizagi
+   Publish Web export.
+
+   Este arquivo NÃO substitui libs/css/app.css — ele carrega
+   depois e sobrepõe só o necessário (cores do cabeçalho, logo,
+   link de rodapé). Não precisa mexer no app.css original.
+
+   Toda vez que o processo for reexportado do Bizagi Modeler, o
+   index.html novo apaga os 4 ajustes marcados "AJUSTE DGEST".
+   Reaplique-os (script de patch) e este arquivo continua valendo
+   sem alteração, pois vive fora da pasta exportada.
+   ============================================================ */
+
+.biz-ex-header-view,
+.biz-ex-logo,
+.biz-ex-top-nav,
+.lt-ie9 .biz-ex-header-view {
+  background: linear-gradient(120deg, #123b63, #1e5a8a) !important;
+  border-color: #0d2c4a !important;
+}
+
+/* Caixa da logo do Bizagi tem 166x55 fixos (app.css, .biz-ex-logo-img) —
+   mantemos a mesma caixa para não quebrar o layout, só trocamos a imagem. */
+.biz-ex-logo-img {
+  background-image: url('logo-trf5-white.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+}
+
+/* Título do processo e da página são <a>; o app.css define "a { color:
+   #E75200 }" globalmente (laranja padrão do Bizagi) — sobrescrevemos só
+   dentro do cabeçalho. */
+.biz-ex-title-process a,
+.biz-ex-title-diagram,
+.biz-ex-top-nav a,
+.biz-ex-back-process.biz-ex-navigate {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, .35) !important;
+}
+
+.biz-ex-top-nav a:hover,
+.biz-ex-top-nav a:focus {
+  color: #dbeaf6 !important;
+}
+
+.biz-ex-time { color: #cfe1f2 !important; }
+
+/* Barra lateral de navegação (lista de diagramas) mais estreita — e a
+   coluna da logo no cabeçalho, que usa a mesma grade (.large-3/.large-9)
+   numa div separada, precisa do mesmo ajuste para as duas bordas
+   continuarem alinhadas verticalmente. Selectors combinados com a classe
+   de cada bloco para não afetar outros elementos do app que reusam
+   large-3/large-9 (ex.: cards, diálogos). */
+@media (min-width: 1024px) {
+  .biz-ex-navigation-left.large-3,
+  .biz-ex-logo.large-3 {
+    width: 17% !important;
+  }
+  .biz-ex-diagram-update-panel.large-9,
+  .biz-ex-top-nav.large-9 {
+    width: 83% !important;
+  }
+}
+
+/* sidebar de navegação (lista de diagramas) no mesmo tom institucional */
+#sidebar,
+.biz-ex-navigation-left {
+  background: #0f2f4f !important;
+}
+
+.nav-bar a {
+  color: #cfe1f2 !important;
+}
+
+.nav-bar a:hover {
+  background: #123b63 !important;
+  color: #ffffff !important;
+}
