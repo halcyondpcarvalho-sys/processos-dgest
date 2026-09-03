@@ -7,6 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <link rel="stylesheet" href="libs/css/jquery/jquery.ui.css" type="text/css" />
         <link rel="stylesheet" href="libs/css/app.css" type="text/css" />
+        <!-- AJUSTE DGEST: tema institucional sobreposto ao padrao do Bizagi (reaplicar a cada nova exportacao) -->
+        <link rel="stylesheet" href="../../../assets/bizagi-theme-override.css" type="text/css" />
         <script type="text/javascript" src="libs/js/app/app.bizagi.min.js"></script>
     </head>
     <body class="off-canvas hide-extras">
@@ -859,7 +861,7 @@
         <a class="show-for-small button sidebar-button" id="sidebarButton" href="#sidebar">
             <img src="libs/img/biz-ex-icon-menu.png" />
         </a>
-        <a href="list/" class="biz-ex-navigate biz-ex-logo-navigate">
+        <a href="../" class="biz-ex-navigate biz-ex-logo-navigate" title="Voltar ao processo"> <!-- AJUSTE DGEST -->
             <i class="biz-ex-logo-img"></i>
         </a>
     </div>
@@ -867,7 +869,7 @@
         <a class="biz-ex-back-process"></a>
         <div class="large-7 columns biz-ex-navigation-data">
             <h1 class="biz-ex-title-process">
-                <a href="list/" class="biz-ex-navigate" title="${Bizagi.Util.getResource('home')}">${process}</a>
+                <a href="../" class="biz-ex-navigate" title="Voltar ao processo">${process}</a> <!-- AJUSTE DGEST -->
             </h1>
             <h2 class="biz-ex-title-diagram" title="${name}">${name}</h2>
             {{if PublishWebAttributes.showPublishDate}}
@@ -884,11 +886,7 @@
                     <li>
                         <a href="fullscreen" class="biz-ex-icon-fullscreen biz-ex-navigate" title="${Bizagi.Util.getResource('fullscreen')}"></a>
                     </li>
-                {{if !Bizagi.AppModel.personalized}}
-                    <li>
-                        <a href="http://www.bizagi.com/" target="_blank" class="biz-ex-bizagi" >${Bizagi.Util.getResource('visitBizagi')}</a>
-                    </li>
-                {{/if}}
+                <!-- AJUSTE DGEST: link "Visite bizagi.com" removido -->
             </ul>
         </nav>
     </div>
