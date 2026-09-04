@@ -16,8 +16,8 @@
 .biz-ex-logo,
 .biz-ex-top-nav,
 .lt-ie9 .biz-ex-header-view {
-  background: linear-gradient(120deg, #123b63, #1e5a8a) !important;
-  border-color: #0d2c4a !important;
+  background: linear-gradient(120deg, #004a8d, #006fd4) !important;
+  border-color: #00315f !important;
 }
 
 /* Caixa da logo do Bizagi tem 166x55 fixos (app.css, .biz-ex-logo-img) —
@@ -67,7 +67,7 @@
 /* sidebar de navegação (lista de diagramas) no mesmo tom institucional */
 #sidebar,
 .biz-ex-navigation-left {
-  background: #0f2f4f !important;
+  background: #00315f !important;
 }
 
 .nav-bar a {
@@ -75,6 +75,6 @@
 }
 
 .nav-bar a:hover {
-  background: #123b63 !important;
+  background: #004a8d !important;
   color: #ffffff !important;
 }
